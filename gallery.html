@@ -385,6 +385,19 @@
                 content.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
-    </script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('.gallery-item img');
+        images.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+            img.setAttribute('decoding', 'async');
+            
+            // Efek halus saat gambar selesai download
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+        });
+    });
+</script>
 </body>
 </html>
