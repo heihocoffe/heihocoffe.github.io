@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Budhagalery | Enlaces</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --accent-green: #4e6e5d;
+            --coffee-dark: #1a1614;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1614 0%, #3d342f 100%);
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container-links {
+            max-width: 480px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+        }
+
+        .brand-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #bcbcbc;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            margin: 35px 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title::before, .section-title::after {
+            content: "";
+            height: 1px;
+            width: 30px;
+            background: var(--primary-gold);
+            margin: 0 15px;
+            opacity: 0.5;
+        }
+
+        .link-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 18px 24px;
+            color: white;
+        }
+
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .link-icon {
+            font-size: 1.4rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .link-text {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        /* Khusus Tombol WhatsApp/Highlights */
+        .btn-highlight {
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        footer {
+            margin-top: 50px;
+            opacity: 0.6;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Disclaimer Style sesuai profil anda */
+        .disclaimer {
+            font-size: 0.7rem;
+            margin-top: 20px;
+            color: #888;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container container-links text-center">
+
+    <div class="brand-logo">Budhagalery</div>
+    <div class="brand-subtitle">Arte • Filosofía • Café</div>
+
+    <div class="section-title">Experiencia Galería</div>
+
+    <a href="#" class="link-card btn-highlight" target="_blank">
+        <i class="fa-solid fa-map-location-dot link-icon"></i>
+        <span class="link-text">Visítanos en Google Maps</span>
+    </a>
+
+    <a href="#" class="link-card" target="_blank">
+        <i class="fa-solid fa-palette link-icon"></i>
+        <span class="link-text">Catálogo de Pinturas</span>
+    </a>
+
+    <a href="#" class="link-card" target="_blank">
+        <i class="fa-solid fa-mug-hot link-icon"></i>
+        <span class="link-text">Bar Coffee Luwak Experience</span>
+    </a>
+
+    <div class="section-title">Destinos Destacados</div>
+
+    <a href="#" class="link-card" target="_blank">
+        <i class="fa-solid fa-temple-buddhist link-icon"></i>
+        <span class="link-text">Yogyakarta (Jogja)</span>
+    </a>
+
+    <a href="#" class="link-card" target="_blank">
+        <i class="fa-solid fa-mountain-sun link-icon"></i>
+        <span class="link-text">Monte Bromo</span>
+    </a>
+
+    <a href="#" class="link-card" target="_blank">
+        <i class="fa-solid fa-umbrella-beach link-icon"></i>
+        <span class="link-text">Bali Paradise</span>
+    </a>
+
+    <a href="#" class="link-card" target="_blank">
+        <i class="fa-solid fa-leaf link-icon"></i>
+        <span class="link-text">Borneo – Orangután</span>
+    </a>
+
+    <footer>
+        <p class="link-text">© 2026 Budhagalery</p>
+        <div class="disclaimer">
+            Created by Faxabel
+        </div>
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
