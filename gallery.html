@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Galería de Arte | Budhagalery</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --coffee-dark: #1a1614;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1614 0%, #3d342f 100%);
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            color: #f8f9fa;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        .header-gallery {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .brand-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #bcbcbc;
+        }
+
+        /* --- SECTION FILOSOFÍA (GRADIENT FIXED) --- */
+        .philosophy-section {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            padding: 30px;
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-height: 160px; /* Tinggi saat tertutup */
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            /* Efek pudar yang rata */
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+
+        .philosophy-content.expanded {
+            max-height: 3000px;
+            -webkit-mask-image: none;
+            mask-image: none;
+        }
+
+        .philosophy-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+            text-align: justify;
+            padding-bottom: 20px;
+        }
+
+        .philosophy-text b {
+            color: var(--primary-gold);
+            display: block;
+            margin-top: 25px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-gold);
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            width: 100%;
+        }
+
+        .read-more-btn i { margin-top: 8px; transition: 0.3s; }
+        .read-more-btn.active i { transform: rotate(180deg); }
+
+        /* --- GALLERY GRID --- */
+        .gallery-container {
+            columns: 3 250px;
+            column-gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .img-caption {
+            padding: 12px;
+            font-size: 0.8rem;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #f8f9fa;
+            text-decoration: none;
+            border: 1px solid var(--primary-gold);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-container { columns: 2 150px; }
+            .philosophy-section { width: 95%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-gallery">
+        <div class="brand-logo">Colección de Imágenes y Arte</div>
+        <p class="brand-subtitle">Budhagalery • Espíritu de Indonesia</p>
+        <a class="btn-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+    </div>
+
+    <div class="philosophy-section">
+        <div class="philosophy-content" id="philosophyContent">
+            <div class="philosophy-text">
+                Budhagalery está presente en la ciudad de Lleida, España. <br/>
+                Aquí se representa la filosofía de la vida, el karma y la reencarnación en la existencia humana.
+
+                <b>Principios de la filosofía BUDISTA</b>
+                Aportar paz a la vida, llena de amor y compasión hacia todos los seres vivos. 
+                Ayudarse mutuamente y tender la mano sin esperar ninguna recompensa.
+
+                <b>Karma</b>
+                Haz el bien a todas las personas, incluso si esas personas tienen malas intenciones hacia ti. 
+                El karma ayudará a las almas puras, de modo que cuando enfrenten dificultades, en cualquier lugar, siempre encontrarán almas puras que les brinden ayuda.
+
+                <b>Reencarnación</b>
+                La vida eterna es un principio de toda existencia, aunque pase por diferentes etapas a lo largo del tiempo. 
+                La etapa del vientre, la vida en el interior del útero femenino. 
+                La etapa de crecimiento, donde debemos socializar con otros seres vivos. Todo comienza con un espíritu puro, un alma pura y el drama de la vida.
+                <br/><br/>
+                La reencarnación vuelve como un proceso hacia la consecución del nirvana. Para alcanzarlo, se deben superar pruebas en la convivencia con otros seres vivos. 
+                La muerte física no significa que el espíritu muera; continúa su viaje sin el cuerpo, como cuando estamos soñando. En ese momento, el viaje prosigue, regresando al vientre femenino o dirigiéndose directamente al nirvana. 
+                Si regresa al vientre, significa que el proceso de purificación del alma aún no ha concluido.
+
+                <b>En la representación de un mono</b>
+                Simboliza la avaricia humana.
+
+                <b>Un pájaro</b>
+                Representa los sueños excesivos.
+                <br/><br/>
+                Esto es solo una representación de la reencarnación dentro de la comprensión de la vida del universo. 
+                Por lo tanto, como seres humanos, no debemos tratar a otras formas de vida de manera inútil. 
+                No deben ser asesinadas si no hay un propósito necesario para nosotros, excepto para nuestras necesidades esenciales y con el permiso del universo.
+
+                <b>En el islam</b>
+                “Assalamualaikum warahmatullahi wabarakatuh” es un saludo para toda la vida en el universo. 
+                Por ello, estamos obligados a responder: “Wa alaikum salam warahmatullahi wabarakatuh”. 
+                Que el universo sea bendecido y traiga felicidad para todos nosotros.
+            </div>
+        </div>
+        <button class="read-more-btn" onclick="togglePhilosophy()" id="readMoreBtn">
+            <span id="btnText">Leer Más</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <div class="gallery-container">
+        <div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/lVyxyGs.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/WbPeRHc.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/q5fsfbN.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/Xv3kfPp.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/PZuGcye.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/ZP4ZcA6.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/iqtJBH7.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/M1rru6n.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/iOlE809.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/VOnPCFX.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/7sUKO9k.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/OpLWKld.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/qaeETTq.jpeg'/>
+</div>
+<div class='gallery-item'>
+    <img alt='Obra de Arte 6' src='https://i.imgur.com/u1TpSdl.jpeg'/>
+</div>
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 1' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAwer5d6mbw_rdrkckAHkGtUTHuc9ynnln1GohQZLAENdRBipySrsnvGLbl4ZprNrRRBaDDCAydycJh4uSteQVkm4JffJNgfAnu0IaEJsFriIjQFwVJ7UVDCxPxY8kX58BmjlqTtE=s680-w680-h510-rw'/>
+            
+        </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 2' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAweoP3z9FUWv8VvUFpbcMfa63tHQxT0ikSuPd6pB51Qnrov43eH3T4pqYeWONvrZDeLvwBt5Z9ElgimSuRkzfwqOmo4B3--BXYumPtIfA8cnE8-tII5MIHKJkj8ALoqa5IShtiu43=s680-w680-h510-rw'/>
+            
+        </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 3' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAwep_OjRZdAxaVgIr3IlmeUkF-Q2c2MrmnvT5_iKo1wukYjjRNkklfC2OcEv3LQj-uZA1uqEyZZfrjaHP74dq1zNudJG8q_jM_GkmlJRElASwZ20yT0EFTK5WN3-sVTu4a_U0vPmuRA=s680-w680-h510-rw'/>
+            
+        </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 4' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAweoPPAHLIa9-4T30FLqPvOeEEzjSO88UVFOpKwkJQEpabMCq0hsM1UCcOTtVOQZfbSoM47ejRGV7hmJvTpsGc-aD-ElKpOf3lmCwyiBKuvKH2oPbrlBViPs7gJV54iHhnPO3VfXJDg=s680-w680-h510-rw'/>
+                    </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 5' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAweoH3yoog2HQWhjpvG23nG_Xp-mcGT7dakvrEe2g4xaJkkDkeiG6FaSo0wEssX0jBxXgptSLT5cy9GaRfanpKOrwSvJHaIo8uJ7vURILFshP_j8R5P3PITcytePKN1tEnPONuXSz=s680-w680-h510-rw'/>
+                    </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 6' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAwepyDA0MDjusjoZNJnwrrLItZwQRkWLKt9UjFW2-ZoEseWIS6_s718uIZo3UW2tMnUZPQf910OyGnsaOsoXg1QL91RNuJ8s07VX3TAQog6GZZlaD47Vn-xTHtXHrwOviU_HZpHriXA=s680-w680-h510-rw'/>
+                    </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 6' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAwepyDA0MDjusjoZNJnwrrLItZwQRkWLKt9UjFW2-ZoEseWIS6_s718uIZo3UW2tMnUZPQf910OyGnsaOsoXg1QL91RNuJ8s07VX3TAQog6GZZlaD47Vn-xTHtXHrwOviU_HZpHriXA=s680-w680-h510-rw'/>
+                    </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 6' src='https://lh3.googleusercontent.com/gps-cs-s/AHVAwepyDA0MDjusjoZNJnwrrLItZwQRkWLKt9UjFW2-ZoEseWIS6_s718uIZo3UW2tMnUZPQf910OyGnsaOsoXg1QL91RNuJ8s07VX3TAQog6GZZlaD47Vn-xTHtXHrwOviU_HZpHriXA=s680-w680-h510-rw'/>
+        </div>
+        
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 6' src='https://i.imgur.com/h06k17M.jpeg'/>
+        </div>
+        
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 6' src='https://i.imgur.com/VmH1ruF.jpeg'/>
+        </div>
+
+        <div class='gallery-item'>
+            <img alt='Obra de Arte 6' src='https://i.imgur.com/Y2p0Bpu.jpeg'/>
+        </div>
+    </div>
+
+    <footer style="text-align:center; margin-top: 50px; opacity:0.5; font-size:0.8rem;">
+        <p>© 2026 Budhagalery | Heihocoffee</p>
+    </footer>
+
+    <script>
+        function togglePhilosophy() {
+            const content = document.getElementById('philosophyContent');
+            const btnText = document.getElementById('btnText');
+            const btn = document.getElementById('readMoreBtn');
+
+            content.classList.toggle('expanded');
+            btn.classList.toggle('active');
+
+            if (content.classList.contains('expanded')) {
+                btnText.innerText = "Leer Menos";
+            } else {
+                btnText.innerText = "Leer Más";
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>
