@@ -7,8 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
-
-    <style>
+<style>
         :root {
             --primary-gold: #c5a059;
             --coffee-dark: #1a1614;
@@ -22,6 +21,7 @@
             color: #f8f9fa;
             margin: 0;
             padding-bottom: 50px;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
         }
 
         .header-gallery {
@@ -44,8 +44,9 @@
             color: #bcbcbc;
         }
 
-        /* --- SECTION FILOSOFÍA (GRADIENT FIXED) --- */
+        /* --- SECTION FILOSOFÍA RESPONSIVE --- */
         .philosophy-section {
+            width: 90%; /* Fleksibel di layar kecil */
             max-width: 800px;
             margin: 0 auto 50px;
             padding: 30px;
@@ -53,6 +54,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             text-align: center;
+            box-sizing: border-box; /* Padding tidak merusak lebar */
         }
 
         .philosophy-content {
@@ -66,13 +68,13 @@
         }
 
         .philosophy-content.expanded {
-            max-height: 3000px;
+            max-height: 4000px; /* Cukup tinggi untuk teks panjang */
             -webkit-mask-image: none;
             mask-image: none;
         }
 
         .philosophy-text {
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.8;
             color: #e0e0e0;
             text-align: justify;
@@ -84,7 +86,7 @@
             display: block;
             margin-top: 25px;
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             text-align: left;
         }
 
@@ -94,13 +96,14 @@
             color: var(--primary-gold);
             cursor: pointer;
             font-size: 0.85rem;
-            margin-top: 10px;
+            margin-top: 15px;
             display: inline-flex;
             flex-direction: column;
             align-items: center;
             text-transform: uppercase;
             letter-spacing: 2px;
             width: 100%;
+            outline: none;
         }
 
         .read-more-btn i { margin-top: 8px; transition: 0.3s; }
@@ -137,15 +140,6 @@
             display: block;
         }
 
-        .img-caption {
-            padding: 12px;
-            font-size: 0.8rem;
-            text-align: center;
-            background: rgba(0,0,0,0.6);
-            color: var(--primary-gold);
-            font-family: 'Playfair Display', serif;
-        }
-
         .btn-back {
             display: inline-block;
             margin-top: 20px;
@@ -157,11 +151,38 @@
             font-size: 0.8rem;
         }
 
-        @media (max-width: 600px) {
-            .gallery-container { columns: 2 150px; }
-            .philosophy-section { width: 95%; padding: 20px; }
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            .brand-logo { font-size: 1.8rem; }
+            .brand-subtitle { font-size: 0.75rem; letter-spacing: 1.5px; }
+            
+            .philosophy-section { 
+                width: 95%; 
+                padding: 20px; 
+                margin-bottom: 30px;
+            }
+            
+            .philosophy-text { 
+                font-size: 0.95rem; 
+                text-align: left; /* Lebih rapi di HP dibanding justify */
+            }
+
+            .gallery-container {
+                columns: 2 140px;
+                width: 95%;
+                column-gap: 10px;
+            }
+            
+            .gallery-item { margin-bottom: 10px; }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                columns: 2 120px;
+            }
         }
     </style>
+
 </head>
 <body>
 
